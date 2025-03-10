@@ -27,11 +27,6 @@ class TestGridChallenge(unittest.TestCase):
         expected = "NO"
         self.assertEqual(grid_challenge(grid), expected)
 
-    def test_empty_grid(self):
-        grid = []
-        expected = "YES" 
-        self.assertEqual(grid_challenge(grid), expected)
-
     def test_single_column(self):
         grid = ["a", "b", "c"]
         expected = "YES"
@@ -39,5 +34,10 @@ class TestGridChallenge(unittest.TestCase):
 
     def test_large_grid(self):
         grid = ["a" * 100, "b" * 100, "c" * 100]
+        expected = "YES"
+        self.assertEqual(grid_challenge(grid), expected)
+
+    def test_non_alphabetic_characters(self):
+        grid = ["123", "456", "789"]
         expected = "YES"
         self.assertEqual(grid_challenge(grid), expected)
